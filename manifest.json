@@ -15,7 +15,7 @@
       "https://komiflo.com/comics/*"
     ],
     "js": [
-      "build/js/contens.bundle.js"
+      "build/js/contents.bundle.js"
     ],
     "run_at": "document_end"
   }],
@@ -25,10 +25,10 @@
       "build/js/background.bundle.js"
     ]
   },
-  "options_page": "build/views/views/options.html",
+  "options_page": "build/views/options.html",
   "icons": {
-    "16": "build/images/blue/icon19.png",
-    "48": "build/images/blue/icon48.png",
-    "128": "build/images/blue/icon128.png"
+    "16": "build/images/icon19.png",
+    "48": "build/images/icon48.png",
+    "128": "build/images/icon128.png"
   }
 }
