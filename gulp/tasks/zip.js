@@ -1,4 +1,4 @@
-let $    = require('gulp-load-plugins')();
+let $ = require('gulp-load-plugins')();
 const path = require('path');
 const { argv } = require('yargs');
 const gulp = require("gulp");

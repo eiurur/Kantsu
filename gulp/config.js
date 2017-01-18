@@ -9,7 +9,7 @@ module.exports = {
   dest,
 
   webpack: {
-    src: src + "/js/*.js",
+    src: src + "/js/**/*.js",
     dest: dest + "/js/"
   },
 
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   watch: {
-    webpack: relativeSrcPath + "/js/*.js",
+    webpack: relativeSrcPath + "/js/**/*.js",
     pug: relativeSrcPath + "/views/**",
     images: relativeSrcPath + "/images/**",
     sass: relativeSrcPath + "/sass/**/*.scss"
