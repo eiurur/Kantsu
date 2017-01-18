@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "chrome-extension-starter",
+  "description": "yay",
+  "version": "0.1.0",
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "https://komiflo.com/comics/*"
+    ],
+    "js": [
+      "build/js/contens.bundle.js"
+    ],
+    "run_at": "document_end"
+  }],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "build/js/background.bundle.js"
+    ]
+  },
+  "options_page": "build/views/views/options.html",
+  "icons": {
+    "16": "build/images/blue/icon19.png",
+    "48": "build/images/blue/icon48.png",
+    "128": "build/images/blue/icon128.png"
+  }
+}

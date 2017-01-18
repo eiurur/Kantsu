@@ -1,0 +1,7 @@
+manifest-dep.json
+temp
+node_modules
+test/*
+package/*
+build/**
+dist/**
