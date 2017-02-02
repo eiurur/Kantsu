@@ -8,11 +8,6 @@ module.exports = {
   // 出力先の指定
   dest,
 
-  webpack: {
-    src: src + "/js/**/*.js",
-    dest: dest + "/js/"
-  },
-
   pug: {
     src: src + '/**/!(_)*.pug',
     dest: dest
@@ -33,7 +28,6 @@ module.exports = {
   },
 
   watch: {
-    webpack: relativeSrcPath + "/js/**/*.js",
     pug: relativeSrcPath + "/views/**",
     images: relativeSrcPath + "/images/**",
     sass: relativeSrcPath + "/sass/**/*.scss"

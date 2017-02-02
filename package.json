@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "author": "eiurur",
   "license": "MIT",
@@ -47,11 +47,12 @@
   },
   "scripts": {
     "setup": "npm i && npm run build",
-    "start": "node node_modules\\gulp\\bin\\gulp",
-    "build": "node node_modules\\gulp\\bin\\gulp build",
-    "zip": "node node_modules\\gulp\\bin\\gulp zip",
-    "major": "npm run zip --version major",
-    "minor": "npm run zip --version minor",
-    "patch": "npm run zip --version patch"
+    "start": "concurrently \"gulp\" \"webpack --progress --colors --watch\"",
+    "build": "gulp build && webpack -p ",
+    "zip": "gulp zip",
+    "version:remain": "npm run build && npm run zip",
+    "version:major": "npm run build && npm run zip --version major",
+    "version:minor": "npm run build && npm run zip --version minor",
+    "version:patch": "npm run build && npm run zip --version patch"
   }
 }

@@ -1,4 +1,4 @@
-let $ = require('gulp-load-plugins')();
+let $    = require('gulp-load-plugins')();
 const path = require('path');
 const { argv } = require('yargs');
 const gulp = require("gulp");
@@ -8,7 +8,6 @@ const watch = require("gulp-watch");
 const ManifestVersionManager = require('../lib/ManifestVersionManager');
 
 gulp.task('zip', [
-  'build',
   'update_manifest_version'
 ], function() {
   let manifest = require('../../manifest.json');
