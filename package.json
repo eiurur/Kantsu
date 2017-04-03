@@ -42,7 +42,7 @@
     "require-dir": "^0.3.1",
     "rimraf": "^2.2.8",
     "vinyl-source-stream": "^1.0.0",
-    "webpack": "^2.2.0",
+    "webpack": "^2.3.3",
     "yargs": "^7.0.2"
   },
   "scripts": {
