@@ -1,40 +1,43 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   context: `${__dirname}/src/js`,
   entry: {
-    background: './background.js',
-    contents: './contents.js'
+    background: "./background.js",
+    contents: "./contents.js"
   },
   output: {
-    path: path.resolve(__dirname, './build/js'),
-    filename: '[name].bundle.js'
+    path: path.resolve(__dirname, "./build/js"),
+    filename: "[name].bundle.js"
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      "process.env.NODE_ENV": JSON.stringify("production")
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        },
-        comments: false
+      compress: {
+        warnings: false
+      },
+      comments: false
     })
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'stage-3'],
-            module: true
-          },
-        }],
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["es2015", "stage-3"],
+              module: true
+            }
+          }
+        ],
         exclude: /node_modules/
       }
     ]
   }
-}
+};

@@ -10,7 +10,7 @@ Chrome Extension Starter
 
 ## Features
 
-- [x] Webpack 2 + gulp
+- [x] Webpack 3 + gulp
 - [x] Babel 6
 - [x] SASS (node-sass)
 - [x] pug
