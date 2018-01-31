@@ -1,31 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "chrome-extension-starter",
+  "name": "eroterest-helper",
   "description": "yay",
   "version": "0.1.0",
-  "permissions": [
-    "tabs",
-    "storage",
-    "notifications",
-    "http://*/*",
-    "https://*/*"
+  "permissions": ["tabs", "http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://movie.eroterest.net/*"],
+      "js": ["build/js/contents.bundle.js"],
+      "run_at": "document_end"
+    }
   ],
-  "content_scripts": [{
-    "matches": [
-      "https://komiflo.com/comics/*"
-    ],
-    "js": [
-      "build/js/contents.bundle.js"
-    ],
-    "run_at": "document_end"
-  }],
   "background": {
     "persistent": false,
-    "scripts": [
-      "build/js/background.bundle.js"
-    ]
+    "scripts": ["build/js/background.bundle.js"]
   },
-  "options_page": "build/views/options.html",
   "icons": {
     "16": "build/images/icon19.png",
     "48": "build/images/icon48.png",

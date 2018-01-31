@@ -1,27 +1,27 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   context: `${__dirname}/src/js`,
   entry: {
-    background: "./background.js",
-    contents: "./contents.js"
+    background: './background.js',
+    contents: './contents.js',
   },
   output: {
-    path: path.resolve(__dirname, "./build/js"),
-    filename: "[name].bundle.js"
+    path: path.resolve(__dirname, './build/js'),
+    filename: '[name].bundle.js',
   },
   plugins: [
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify("production")
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
       },
-      comments: false
-    })
+      comments: false,
+    }),
   ],
   module: {
     rules: [
@@ -29,15 +29,16 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-              presets: ["es2015", "stage-3"],
-              module: true
-            }
-          }
+              presets: ['es2015', 'stage-3'],
+              // plugins: ['transform-runtime'],
+              module: true,
+            },
+          },
         ],
-        exclude: /node_modules/
-      }
-    ]
-  }
+        exclude: /node_modules/,
+      },
+    ],
+  },
 };

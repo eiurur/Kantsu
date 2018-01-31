@@ -1,13 +1,21 @@
 {
-  "name": "chrome-extension-starter",
-  "version": "0.2.0",
+  "name": "eroterest-helper",
+  "version": "0.1.0",
   "description": "",
   "author": "eiurur",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "cheerio-httpcli": "^0.7.2",
+    "jquery": "^3.3.1",
+    "query-string": "^5.0.1"
+  },
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-stage-3": "^6.22.0",
     "concurrently": "^3.4.0",
@@ -37,6 +45,7 @@
     "gulp-watch": "^5.0.0",
     "gulp-webpack": "^1.5.0",
     "gulp-zip": "^4.0.0",
+    "nodemon": "^1.14.11",
     "require-dir": "^0.3.1",
     "rimraf": "^2.2.8",
     "vinyl-source-stream": "^2.0.0",
