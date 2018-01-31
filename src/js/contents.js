@@ -1,60 +1,55 @@
 import 'babel-polyfill';
-import queryString from 'query-string';
 import $ from 'jquery';
 import axios from 'axios';
+import MainButton from './lib/MainButton';
+import ListButton from './lib/ListButton';
 
-const RELAY_SERVER_URL = 'https://eroterest-helper-defyyhqlgb.now.sh';
+const RELAY_SERVER_URL = 'https://eroterest-helper-yccuzjlnug.now.sh';
 const API_VERSION = 'v1';
 const END_POINT = `${RELAY_SERVER_URL}/${API_VERSION}`;
 
 (async () => {
-  const openTab = link => {
-    window.open(link);
-  };
-
-  console.log('contents');
-
-  // メイン動画
-  const mainUrl = document.querySelector('.gotoBlog a').getAttribute('href');
-
-  // 類似動画
-  const suggestedUrls = Array.from(
-    document.querySelectorAll('.goodSiteItem .itemTitle a'),
-  ).map(a => a.getAttribute('href'));
-
-  console.log(mainUrl);
-  console.log(suggestedUrls);
+  const sleep = (ms = 1000) =>
+    new Promise(resolve => setTimeout(() => resolve(), ms));
 
   // htmlに動画サイトのURLがないか探索
-  const response = await axios.get(`${END_POINT}/eroterest/movies`, {
-    params: { url: mainUrl },
-  });
+  const search = async url => {
+    return await axios.get(`${END_POINT}/eroterest/movies`, {
+      params: { url },
+    });
+  };
 
-  // リンクの数を数えてボタンを生成。
-  const buttonHtml = `
-  <div style="padding:1rem 0;">
-    <a class="btn btn-lg btn-success btn-block open-with-eh" data-links="${response.data.movie.links
-      .map(link => link.href)
-      .join(',')}">
-      動画ページを直接開く ( ${response.data.movie.links.length}枚 )
-    </a>
-  </div>
-  `;
+  // 個別画面(メイン)の動画
+  const main = async url => {
+    const response = await search(url);
+    const button = new MainButton();
+    button.create(response.data.movie.links);
+    button.render('.gotoBlog');
+    button.onClick('.open-with-eh');
+  };
 
-  // ボタンのhtmlを挿入
-  // document
-  //   .querySelector('.gotoBlog')
-  //   .insertAdjacentHTML('beforeend', buttonHtml);
-  $('.gotoBlog').append(buttonHtml);
+  // 一覧画面の動画
+  const list = async url => {
+    const response = await search(url);
+    const button = new ListButton();
+    button.create(response.data.movie.links);
+    button.render($(`.itemTitle a[href="${url}"]`).closest('.goodSiteItem'));
+    button.onClick('.open-with-eh');
+  };
 
-  // ボタンにイベントを登録(clickで新規タブを生成)
-  // document
-  //   .querySelector('.open-with-eh')
-  //   .addEventListener('click', openTab, false);
-  $('.open-with-eh').on('click', function(event) {
-    const links = $(this)
-      .data('links')
-      .split(',');
-    links.map(link => openTab(link));
+  // ここから
+  const mainUrl = $('.gotoBlog a').attr('href');
+  main(mainUrl);
+
+  // 類似動画
+  const suggestedUrls = $('.goodSiteItem .itemTitle a')
+    .map(function(i, el) {
+      return $(this).attr('href');
+    })
+    .get();
+  suggestedUrls.forEach(async (url, index) => {
+    await sleep(300 * index);
+    console.log('Go => ', url);
+    list(url);
   });
 })();

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "eroterest-helper",
-  "description": "yay",
+  "description": "open directly the movie site",
   "version": "0.1.0",
   "permissions": ["tabs", "http://*/*", "https://*/*"],
   "content_scripts": [

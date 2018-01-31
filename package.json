@@ -1,16 +1,14 @@
 {
   "name": "eroterest-helper",
   "version": "0.1.0",
-  "description": "",
+  "description": "open directly the movie site",
   "author": "eiurur",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
-    "babel-runtime": "^6.26.0",
     "cheerio-httpcli": "^0.7.2",
-    "jquery": "^3.3.1",
-    "query-string": "^5.0.1"
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",

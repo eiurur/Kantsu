@@ -1,18 +1,35 @@
-Chrome Extension Starter
-=====
+# eroterest-helper
 
-## Usage
+open directly the movie site.
 
-    git clone https://github.com/eiurur/chrome-extension-starter <project-name>
-    cd <project-name>
+# Demo
+
+### Before
+
+TODO
+
+### After
+
+TODO
+
+<br>
+
+# Support
+
+* jp.pornhub.com
+* jp.spankbang.com
+* jp.txxx.com
+* jp.xhamster.com
+* www.tube8.com
+* share-videos.se
+* www.spankwire.com
+* www.youporn.com
+
+<br>
+
+# Develpment
+
+    git clone https://github.com/eiurur/eroterest-helper.git
+    cd eroterest-helper
     npm run setup
     npm start
-
-## Features
-
-- [x] Webpack 3 + gulp
-- [x] Babel 6
-- [x] SASS (node-sass)
-- [x] pug
-- [x] zip
-- [ ] deploy
