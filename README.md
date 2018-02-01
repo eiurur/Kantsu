@@ -1,18 +1,24 @@
 # eroterest-helper
 
-open directly the movie site.
+Open directly the movie page from movie.eroterest.net.
 
 # Demo
 
 ### Before
 
-TODO
+<video src="https://github.com/eiurur/eroterest-helper/blob/demo/before.mp4" type="video/mp4" autoplay loop muted>
+demo movie (before)
+</video>
 
 ### After
 
-TODO
+<video src="https://github.com/eiurur/eroterest-helper/blob/demo/after.mp4" type="video/mp4" autoplay loop muted>
+demo movie (after)
+</video>
 
-<br>
+# Install
+
+<a href="https://chrome.google.com/webstore/detail/eroterest-helper/knagjpmiabllamnchkhehmajdnlnamoe?hl=ja" target="_blank">eroterest-helper - Chrome ウェブストア</a>
 
 # Support
 
@@ -24,8 +30,6 @@ TODO
 * share-videos.se
 * www.spankwire.com
 * www.youporn.com
-
-<br>
 
 # Develpment
 
