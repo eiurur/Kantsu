@@ -11,7 +11,7 @@ export default class ListButton extends Button {
     // リンクの数を数えてボタンを生成。
     this.html = `
       <div style="padding:1rem 0;">
-        <a class="btn btn-lg btn-success btn-block open-with-eh" data-links="${links
+        <a class="btn btn-lg btn-success open-with-eh" data-links="${links
           .map(link => link.href)
           .join(',')}">
           動画ページを直接開く ( ${links.length}枚 )
@@ -21,6 +21,9 @@ export default class ListButton extends Button {
   }
 
   onClick(selector) {
+    // FIXME; 無駄
+    this.offClick(selector);
+
     // ボタンにイベントを登録(clickで新規タブを生成)
     $(selector).on('click', function(event) {
       $(this)
@@ -28,5 +31,9 @@ export default class ListButton extends Button {
         .split(',')
         .map(link => window.open(link));
     });
+  }
+
+  offClick(selector) {
+    $(selector).off('click');
   }
 }

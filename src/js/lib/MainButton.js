@@ -21,6 +21,9 @@ export default class MainButton extends Button {
   }
 
   onClick(selector) {
+    // FIXME; 無駄
+    this.offClick(selector);
+
     // ボタンにイベントを登録(clickで新規タブを生成)
     $(selector).on('click', function(event) {
       $(this)
@@ -28,5 +31,9 @@ export default class MainButton extends Button {
         .split(',')
         .map(link => window.open(link));
     });
+  }
+
+  offClick(selector) {
+    $(selector).off('click');
   }
 }
