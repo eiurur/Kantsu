@@ -6,14 +6,16 @@ Open directly the movie page from movie.eroterest.net.
 
 ### Before
 
-<video src="https://github.com/eiurur/eroterest-helper/blob/demo/before.mp4" type="video/mp4" autoplay loop muted>
+<video autoplay loop muted playsinline style="width:500px">
+<source src="https://github.com/eiurur/eroterest-helper/raw/demo/before.mp4" type="video/mp4">
 demo movie (before)
 </video>
 
 ### After
 
-<video src="https://github.com/eiurur/eroterest-helper/blob/demo/after.mp4" type="video/mp4" autoplay loop muted>
-demo movie (after)
+<video autoplay loop muted playsinline style="width:500px">
+<source src="https://github.com/eiurur/eroterest-helper/raw/demo/after.mp4" type="video/mp4">
+demo movie (before)
 </video>
 
 # Install
