@@ -3,26 +3,14 @@
   "name": "eroterest-helper",
   "description": "open directly the movie site",
   "version": "0.1.0",
-  "permissions": [
-    "tabs",
-    "http://*/*",
-    "https://*/*"
+  "permissions": ["tabs", "http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://movie.eroterest.net/*"],
+      "js": ["build/js/contents.bundle.js"],
+      "run_at": "document_end"
+    }
   ],
-  "content_scripts": [{
-    "matches": [
-      "https://movie.eroterest.net/*"
-    ],
-    "js": [
-      "build/js/contents.bundle.js"
-    ],
-    "run_at": "document_end"
-  }],
-  "background": {
-    "persistent": false,
-    "scripts": [
-      "build/js/background.bundle.js"
-    ]
-  },
   "icons": {
     "16": "build/images/icon19.png",
     "48": "build/images/icon48.png",
