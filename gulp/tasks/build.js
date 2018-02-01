@@ -1,6 +1,2 @@
 const gulp = require('gulp');
-gulp.task('build', [
-  'sass',
-  'pug',
-  'images'
-]);
+gulp.task('build', ['images']);
