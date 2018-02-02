@@ -1,4 +1,4 @@
-# eroterest-helper
+# Kantsu
 
 Open directly the movie page from movie.eroterest.net.
 
@@ -7,20 +7,20 @@ Open directly the movie page from movie.eroterest.net.
 ### Before
 
 <video autoplay loop muted playsinline style="width:500px">
-<source src="https://github.com/eiurur/eroterest-helper/raw/demo/before.mp4" type="video/mp4">
+<source src="https://github.com/eiurur/Kantsu/raw/demo/before.mp4" type="video/mp4">
 demo movie (before)
 </video>
 
 ### After
 
 <video autoplay loop muted playsinline style="width:500px">
-<source src="https://github.com/eiurur/eroterest-helper/raw/demo/after.mp4" type="video/mp4">
+<source src="https://github.com/eiurur/Kantsu/raw/demo/after.mp4" type="video/mp4">
 demo movie (before)
 </video>
 
 # Install
 
-<a href="https://chrome.google.com/webstore/detail/eroterest-helper/knagjpmiabllamnchkhehmajdnlnamoe?hl=ja" target="_blank">eroterest-helper - Chrome ウェブストア</a>
+<a href="https://chrome.google.com/webstore/detail/Kantsu/knagjpmiabllamnchkhehmajdnlnamoe?hl=ja" target="_blank">Kantsu - Chrome ウェブストア</a>
 
 # Support
 
@@ -35,7 +35,7 @@ demo movie (before)
 
 # Develpment
 
-    git clone https://github.com/eiurur/eroterest-helper.git
-    cd eroterest-helper
+    git clone https://github.com/eiurur/Kantsu.git
+    cd Kantsu
     npm run setup
     npm start
