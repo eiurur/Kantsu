@@ -4,19 +4,7 @@ Open directly the movie page from movie.eroterest.net.
 
 # Demo
 
-### Before
-
-<video autoplay loop muted playsinline style="width:500px">
-<source src="https://github.com/eiurur/Kantsu/raw/demo/before.mp4" type="video/mp4">
-demo movie (before)
-</video>
-
-### After
-
-<video autoplay loop muted playsinline style="width:500px">
-<source src="https://github.com/eiurur/Kantsu/raw/demo/after.mp4" type="video/mp4">
-demo movie (before)
-</video>
+![demo](https://github.com/eiurur/Kantsu/raw/demo/after_demo.gif)
 
 # Install
 
