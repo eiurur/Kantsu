@@ -2,21 +2,15 @@
   "manifest_version": 2,
   "name": "Kantsu",
   "description": "open directly the movie page from eroterest.movie.net",
-  "version": "0.2.0",
-  "permissions": [
-    "tabs",
-    "http://*/*",
-    "https://*/*"
+  "version": "0.2.1",
+  "permissions": ["tabs", "http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://movie.eroterest.net/*"],
+      "js": ["build/js/contents.bundle.js"],
+      "run_at": "document_end"
+    }
   ],
-  "content_scripts": [{
-    "matches": [
-      "https://movie.eroterest.net/*"
-    ],
-    "js": [
-      "build/js/contents.bundle.js"
-    ],
-    "run_at": "document_end"
-  }],
   "icons": {
     "16": "build/images/icon19.png",
     "48": "build/images/icon48.png",
