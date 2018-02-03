@@ -2,22 +2,32 @@ import 'babel-polyfill';
 import $ from 'jquery';
 import OpenButtonMaker from './lib/OpenButtonMaker';
 
-(async () => {
-  const sleep = (ms = 1000) =>
-    new Promise(resolve => setTimeout(() => resolve(), ms));
+const sleep = (ms = 1000) =>
+  new Promise(resolve => setTimeout(() => resolve(), ms));
 
-  // メイン動画
-  const mainUrl = $('.gotoBlog a').attr('href');
-  new OpenButtonMaker().main(mainUrl);
+const showMain = () => {
+  const eroteresPagetUrl = location.href;
+  new OpenButtonMaker().main(eroteresPagetUrl);
+};
 
-  // 類似動画
-  const suggestedUrls = $('.item .itemTitle a')
+const showList = () => {
+  const eroterestPageUrls = $('.itemWrapper .itemTitle a')
     .map(function(i, el) {
       return $(this).attr('href');
     })
     .get();
-  suggestedUrls.forEach(async (url, index) => {
-    await sleep(300 * index);
-    new OpenButtonMaker().list(url);
-  });
+  new OpenButtonMaker().list(eroterestPageUrls);
+};
+
+(async () => {
+  const inMainPage = location.href.includes(
+    'https://movie.eroterest.net/page/',
+  );
+  if (inMainPage) {
+    showMain();
+    await sleep(500); //  類似動画の表示がワンテンポ遅いので待つ
+    showList();
+  } else {
+    showList();
+  }
 })();
