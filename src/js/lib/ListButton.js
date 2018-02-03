@@ -7,14 +7,22 @@ export default class ListButton extends Button {
     super(html);
   }
 
-  create(links) {
+  create(movie) {
+    let linksJoined = null;
+    let movieNum = null;
+    // 検出できない埋め込みリンクは
+    if (movie.links.length === 0) {
+      linksJoined = movie.url;
+      movieNum = 1;
+    } else {
+      linksJoined = movie.links.map(link => link.href).join(',');
+      movieNum = movie.links.length;
+    }
     // リンクの数を数えてボタンを生成。
     this.html = `
       <div style="padding:1rem 0;">
-        <a class="btn btn-lg btn-success open-with-eh" data-links="${links
-          .map(link => link.href)
-          .join(',')}">
-          動画ページを直接開く ( ${links.length}枚 )
+        <a class="btn btn-lg btn-success open-with-eh" data-links="${linksJoined}">
+          動画ページを直接開く ( ${movieNum}枚 )
         </a>
       </div>
     `;
