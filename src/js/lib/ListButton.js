@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import sanitizeHtml from 'sanitize-html';
 
 import Button from './Button';
 
@@ -8,20 +9,21 @@ export default class ListButton extends Button {
   }
 
   create(movie) {
-    let linksJoined = null;
+    let cleanLinks = null;
     let movieNum = null;
     // 検出できない埋め込みリンクは
     if (movie.links.length === 0) {
-      linksJoined = movie.url;
+      cleanLinks = sanitizeHtml(movie.url);
       movieNum = 1;
     } else {
-      linksJoined = movie.links.map(link => link.href).join(',');
+      const linksJoined = movie.links.map(link => link.href).join(',');
+      cleanLinks = sanitizeHtml(linksJoined);
       movieNum = movie.links.length;
     }
     // リンクの数を数えてボタンを生成。
     this.html = `
       <div style="padding:1rem 0;">
-        <a class="btn btn-lg btn-success open-with-eh" data-links="${linksJoined}">
+        <a class="btn btn-lg btn-success open-with-eh" data-links="${cleanLinks}">
           動画ページを直接開く ( ${movieNum}枚 )
         </a>
       </div>
