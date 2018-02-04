@@ -2,8 +2,7 @@ import 'babel-polyfill';
 import $ from 'jquery';
 import OpenButtonMaker from './lib/OpenButtonMaker';
 
-const sleep = (ms = 1000) =>
-  new Promise(resolve => setTimeout(() => resolve(), ms));
+const sleep = (ms = 1000) => new Promise(resolve => setTimeout(resolve, ms));
 
 const showMain = () => {
   const eroteresPagetUrl = location.href;
@@ -16,7 +15,7 @@ const showList = () => {
       return $(this).attr('href');
     })
     .get();
-  new OpenButtonMaker().list(eroterestPageUrls);
+  eroterestPageUrls.map(url => new OpenButtonMaker().list(url));
 };
 
 (async () => {
@@ -25,7 +24,7 @@ const showList = () => {
   );
   if (inMainPage) {
     showMain();
-    await sleep(500); //  類似動画の表示がワンテンポ遅いので待つ
+    await sleep(500);
     showList();
   } else {
     showList();

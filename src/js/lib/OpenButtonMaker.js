@@ -15,11 +15,11 @@ export default class OpenButtonMaker {
   constructor() {}
 
   // htmlに動画サイトのURLがないか探索
-  async search(urls) {
+  async search(url) {
     console.log(END_POINT);
     return await axios.post(
       `${END_POINT}/eroterest/movies`,
-      { urls },
+      { url },
       {
         timeout: 60 * 1000,
       },
@@ -27,32 +27,22 @@ export default class OpenButtonMaker {
   }
 
   // 個別画面(メイン)の動画
-  async main(eroterestPageUrls) {
-    if (!Array.isArray(eroterestPageUrls)) {
-      eroterestPageUrls = [eroterestPageUrls];
-    }
-    const response = await this.search(eroterestPageUrls);
-    response.data.movies.map(movie => {
-      const button = new MainButton();
-      button.create(movie);
-      button.render('.gotoBlog');
-      button.onClick('.open-with-eh');
-    });
+  async main(eroterestPageUrl) {
+    const response = await this.search(eroterestPageUrl);
+    const button = new MainButton();
+    button.create(response.data.movie);
+    button.render('.gotoBlog');
+    button.onClick('.open-with-eh');
   }
 
   // 一覧画面の動画
-  async list(eroterestPageUrls) {
-    if (!Array.isArray(eroterestPageUrls)) {
-      eroterestPageUrls = [eroterestPageUrls];
-    }
-    const response = await this.search(eroterestPageUrls);
-    response.data.movies.map((movie, i) => {
-      const button = new ListButton();
-      button.create(movie);
-      button.render(
-        $(`.itemTitle a[href="${eroterestPageUrls[i]}"]`).closest('.item'),
-      );
-      button.onClick('.open-with-eh');
-    });
+  async list(eroterestPageUrl) {
+    const response = await this.search(eroterestPageUrl);
+    const button = new ListButton();
+    button.create(response.data.movie);
+    button.render(
+      $(`.itemTitle a[href="${eroterestPageUrl}"]`).closest('.item'),
+    );
+    button.onClick('.open-with-eh');
   }
 }
