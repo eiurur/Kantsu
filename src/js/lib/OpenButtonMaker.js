@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import $ from 'jquery';
 import axios from 'axios';
 import MainButton from './MainButton';

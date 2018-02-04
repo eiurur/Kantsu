@@ -4,7 +4,6 @@ const webpack = require('webpack');
 module.exports = {
   context: `${__dirname}/src/js`,
   entry: {
-    // background: './background.js',
     contents: './contents.js',
   },
   output: {
@@ -32,8 +31,6 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: ['es2015', 'stage-3'],
-              // plugins: ['transform-runtime'],
-              module: true,
             },
           },
         ],

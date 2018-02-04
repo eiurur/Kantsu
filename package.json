@@ -53,7 +53,7 @@
   "scripts": {
     "setup": "npm i && npm run build",
     "start": "concurrently \"gulp\" \"webpack --progress --colors --watch\"",
-    "build": "gulp build && webpack -p ",
+    "build": "gulp build && webpack --config webpack.production.config.js",
     "zip": "gulp zip",
     "version:remain": "npm run build && npm run zip",
     "version:major": "npm run build && npm run zip --version major",
