@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import sanitizeHtml from 'sanitize-html';
+import sanitizer from 'sanitizer';
 
 import Button from './Button';
 
@@ -13,11 +13,11 @@ export default class ListButton extends Button {
     let movieNum = null;
     // 検出できない埋め込みリンクは
     if (movie.links.length === 0) {
-      cleanLinks = sanitizeHtml(movie.url);
+      cleanLinks = sanitizer.sanitize(movie.url);
       movieNum = 1;
     } else {
       const linksJoined = movie.links.map(link => link.href).join(',');
-      cleanLinks = sanitizeHtml(linksJoined);
+      cleanLinks = sanitizer.sanitize(linksJoined);
       movieNum = movie.links.length;
     }
     // リンクの数を数えてボタンを生成。
@@ -31,7 +31,7 @@ export default class ListButton extends Button {
   }
 
   onClick(selector) {
-    // FIXME; 無駄
+    // FIXME: 無駄
     this.offClick(selector);
 
     // ボタンにイベントを登録(clickで新規タブを生成)

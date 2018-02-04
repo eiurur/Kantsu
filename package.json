@@ -1,6 +1,6 @@
 {
   "name": "kantsu",
-  "version": "0.2.1",
+  "version": "0.2.4",
   "description": "open directly the movie site",
   "author": "eiurur",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "jquery": "^3.3.1",
-    "sanitize-html": "^1.17.0"
+    "sanitizer": "^0.1.3"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
