@@ -4,4 +4,5 @@ const config = require('../config').watch;
 
 gulp.task('watch', () => {
   watch(config.images, () => gulp.start(['images']));
+  watch(config.sass, () => gulp.start(['sass']));
 });

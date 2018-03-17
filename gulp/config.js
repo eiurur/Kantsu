@@ -12,11 +12,17 @@ module.exports = {
     dest: dest + '/images/',
   },
 
+  sass: {
+    src: [src + '/sass/**/*.scss'],
+    dest: dest + '/css/',
+  },
+
   clean: {
     target: './build',
   },
 
   watch: {
     images: relativeSrcPath + '/images/**',
+    sass: relativeSrcPath + '/sass/**/*.scss',
   },
 };
