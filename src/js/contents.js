@@ -39,11 +39,13 @@ const fetchGoButtons = async () => {
 (async () => {
   const goButtons = await fetchGoButtons();
   const progressBar = new ProgressBar(goButtons.length, new Nanobar());
-  for (let button of goButtons) {
-    try {
-      await button.show();
-      progressBar.inc();
-    } catch (err) {}
-  }
+  await Promise.all(
+    goButtons.map(async button => {
+      try {
+        await button.show();
+        progressBar.inc();
+      } catch (err) {}
+    }),
+  );
   progressBar.finish();
 })();
