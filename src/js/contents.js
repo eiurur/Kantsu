@@ -1,32 +1,49 @@
 import 'babel-polyfill';
 import $ from 'jquery';
-import OpenButtonMaker from './lib/OpenButtonMaker';
+import Nanobar from 'nanobar';
+import ProgressBar from './lib/ProgressBar';
+import KantsuButton from './lib/KantsuButton';
 
 const sleep = (ms = 1000) => new Promise(resolve => setTimeout(resolve, ms));
 
-const showMain = () => {
+const fetchMain = () => {
   const eroteresPagetUrl = location.href;
-  new OpenButtonMaker().main(eroteresPagetUrl);
+  return [new KantsuButton({ url: eroterestPageUrl, type: 'main' })];
 };
 
-const showList = () => {
-  const eroterestPageUrls = $('.itemWrapper .itemTitle a')
+const fetchList = () => {
+  return $('.itemWrapper .itemTitle a')
     .map(function(i, el) {
       return $(this).attr('href');
     })
-    .get();
-  eroterestPageUrls.map(url => new OpenButtonMaker().list(url));
+    .get()
+    .map(
+      eroterestPageUrl =>
+        new KantsuButton({ url: eroterestPageUrl, type: 'list' }),
+    );
 };
 
-(async () => {
+const fetchGoButtons = async () => {
   const inMainPage = location.href.includes(
     'https://movie.eroterest.net/page/',
   );
+
   if (inMainPage) {
-    showMain();
     await sleep(500);
-    showList();
+    return [...fetchMain(), ...fetchList()];
   } else {
-    showList();
+    return [...fetchList()];
   }
+};
+
+(async () => {
+  const goButtons = await fetchGoButtons();
+  const progressBar = new ProgressBar(goButtons.length, new Nanobar());
+  for (let button of goButtons) {
+    try {
+      await button.show();
+      progressBar.inc();
+    } catch (err) {}
+  }
+  progressBar.finish();
 })();
