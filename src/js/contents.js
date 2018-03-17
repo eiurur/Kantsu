@@ -7,7 +7,7 @@ import KantsuButton from './lib/KantsuButton';
 const sleep = (ms = 1000) => new Promise(resolve => setTimeout(resolve, ms));
 
 const fetchMain = () => {
-  const eroteresPagetUrl = location.href;
+  const eroterestPageUrl = location.href;
   return [new KantsuButton({ url: eroterestPageUrl, type: 'main' })];
 };
 
