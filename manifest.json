@@ -2,9 +2,10 @@
   "manifest_version": 2,
   "name": "Kantsu",
   "description": "open directly the movie page from eroterest.movie.net",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "permissions": [
-    "tabs"
+    "tabs",
+    "https://kantsu.now.sh/"
   ],
   "content_scripts": [{
     "matches": [
