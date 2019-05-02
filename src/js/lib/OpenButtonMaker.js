@@ -1,29 +1,24 @@
 import 'babel-polyfill';
 import $ from 'jquery';
-import axios from 'axios';
 import MainButton from './MainButton';
 import ListButton from './ListButton';
-
-const isProduction = chrome.runtime.id === 'knagjpmiabllamnchkhehmajdnlnamoe';
-const RELAY_SERVER_URL = isProduction
-  ? 'https://kantsu.now.sh'
-  : 'https://localhost:5003';
-const API_VERSION = 'v1';
-const END_POINT = `${RELAY_SERVER_URL}/${API_VERSION}`;
 
 export default class OpenButtonMaker {
   constructor() {}
 
   // htmlに動画サイトのURLがないか探索
-  async search(url) {
-    console.log(END_POINT);
-    return await axios.post(
-      `${END_POINT}/eroterest/movies`,
-      { url },
-      {
-        timeout: 60 * 1000,
-      },
-    );
+  search(url) {
+    return new Promise(resolve => {
+      chrome.runtime.sendMessage(
+        {
+          func: 'search',
+          url: url,
+        },
+        data => {
+          return resolve(data);
+        },
+      );
+    });
   }
 
   // 個別画面(メイン)の動画
