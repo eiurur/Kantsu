@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import $ from 'jquery';
 import axios from 'axios';
 
-const isProduction = chrome.runtime.id === 'knagjpmiabllamnchkhehmajdnlnamoe';
+const isProduction = true;
 const RELAY_SERVER_URL = isProduction
   ? 'https://kantsu.now.sh'
   : 'https://127.0.0.1:5003';
@@ -30,7 +30,7 @@ export default class RuntimeMessageListener {
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       console.log('onMessage request = ', request);
       if (request.func) {
-        this[request.func](request).then(result => sendResponse(result));
+        this[request.func](request).then((result) => sendResponse(result));
         return true; // Will respond asynchronously.
       }
 

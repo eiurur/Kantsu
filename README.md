@@ -8,18 +8,18 @@ Open directly the movie page from movie.eroterest.net.
 
 # Install
 
-<a href="https://chrome.google.com/webstore/detail/Kantsu/knagjpmiabllamnchkhehmajdnlnamoe?hl=ja" target="_blank">Kantsu - Chrome ウェブストア</a>
+<a href="https://github.com/eiurur/Kantsu/releases/latest">Release</a>から zip を落として<a href="https://github.com/eiurur/Kantsu/releases/latest" target="_blank">chrome://extensions/</a>に D&D。
 
 # Support
 
-* jp.pornhub.com
-* jp.spankbang.com
-* jp.txxx.com
-* jp.xhamster.com
-* www.tube8.com
-* share-videos.se
-* www.spankwire.com
-* www.youporn.com
+- jp.pornhub.com
+- jp.spankbang.com
+- jp.txxx.com
+- jp.xhamster.com
+- www.tube8.com
+- share-videos.se
+- www.spankwire.com
+- www.youporn.com
 
 # Develpment
 
