@@ -20,7 +20,8 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['es2015', 'stage-3'],
+              presets: ['@babel/preset-env'],
+
               // plugins: ['transform-runtime'],
               // plugins: ['@babel/transform-runtime'],
             },

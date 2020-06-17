@@ -5,7 +5,7 @@ import axios from 'axios';
 const isProduction = chrome.runtime.id === 'knagjpmiabllamnchkhehmajdnlnamoe';
 const RELAY_SERVER_URL = isProduction
   ? 'https://kantsu.now.sh'
-  : 'https://localhost:5003';
+  : 'https://127.0.0.1:5003';
 const API_VERSION = 'v1';
 const END_POINT = `${RELAY_SERVER_URL}/${API_VERSION}`;
 
