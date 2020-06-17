@@ -8,7 +8,7 @@ Open directly the movie page from movie.eroterest.net.
 
 # Install
 
-<a href="https://github.com/eiurur/Kantsu/releases/latest">Release</a>から zip を落として<a href="https://github.com/eiurur/Kantsu/releases/latest" target="_blank">chrome://extensions/</a>に D&D。
+<a href="https://github.com/eiurur/Kantsu/releases/latest">Release</a>から zip を落として<a href="chrome://extensions/" target="_blank">chrome://extensions/</a>に D&D。
 
 # Support
 
