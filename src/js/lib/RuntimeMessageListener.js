@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import $ from 'jquery';
 import axios from 'axios';
 
-const isProduction = true;
+const isProduction = false;
 const RELAY_SERVER_URL = isProduction
   ? 'https://kantsu.now.sh'
   : 'https://127.0.0.1:5003';
