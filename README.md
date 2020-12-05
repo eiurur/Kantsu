@@ -2,15 +2,19 @@
 
 Open directly the movie page from movie.eroterest.net.
 
-# Demo
+## Status
+
+![Node.js CI](https://github.com/eiurur/Kantsu/workflows/Node.js%20CI/badge.svg?branch=master)
+
+## Demo
 
 ![demo](https://github.com/eiurur/Kantsu/raw/demo/after_demo.gif)
 
-# Install
+## Install
 
 <a href="https://github.com/eiurur/Kantsu/releases/latest">Release</a>から zip を落として<a href="chrome://extensions/" target="_blank">chrome://extensions/</a>に D&D。
 
-# Support
+## Support
 
 - jp.pornhub.com
 - jp.spankbang.com
@@ -21,7 +25,7 @@ Open directly the movie page from movie.eroterest.net.
 - www.spankwire.com
 - www.youporn.com
 
-# Develpment
+## Develpment
 
     git clone https://github.com/eiurur/Kantsu.git
     cd Kantsu
