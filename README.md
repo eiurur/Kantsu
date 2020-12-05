@@ -2,6 +2,8 @@
 
 Open directly the movie page from movie.eroterest.net.
 
+NOTE: In order to use it, you need to start [a relay server](https://github.com/eiurur/Kantsu-server).
+
 ## Status
 
 ![Node.js CI](https://github.com/eiurur/Kantsu/workflows/Node.js%20CI/badge.svg?branch=master)
