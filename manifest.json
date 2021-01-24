@@ -2,14 +2,14 @@
   "manifest_version": 2,
   "name": "Kantsu",
   "description": "open directly the movie page from eroterest.movie.net",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "permissions": ["tabs", "chrome-extension://*", "https://kantsu.now.sh/"],
   "background": {
     "persistent": false,
     "scripts": ["build/js/background.bundle.js"]
   },
   "content_scripts": [{
-    "matches": ["https://eroterest.net/*", "https://movie.eroterest.net/*"],
+    "matches": ["*://eroterest.net/*", "https://movie.eroterest.net/*"],
     "css": ["build/css/contents.min.css"],
     "js": ["build/js/contents.bundle.js"],
     "run_at": "document_end"
