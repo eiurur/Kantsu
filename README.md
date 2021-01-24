@@ -1,8 +1,8 @@
 # Kantsu
 
-Open directly the movie page from movie.eroterest.net.
+Open directly the movie page from eroterest.net and movie.eroterest.net.
 
-NOTE: In order to use it, you need to start [a relay server](https://github.com/eiurur/Kantsu-server).
+**NOTE: In order to use it, you need to start [a relay server](https://github.com/eiurur/Kantsu-server).**
 
 ## Status
 
@@ -14,9 +14,9 @@ NOTE: In order to use it, you need to start [a relay server](https://github.com/
 
 ## Install
 
-<a href="https://github.com/eiurur/Kantsu/releases/latest">Release</a>から zip を落として<a href="chrome://extensions/" target="_blank">chrome://extensions/</a>に D&D。
+Drop the ZIP file from <a href="https://github.com/eiurur/Kantsu/releases/latest">Release</a> and drag and drop it into <a href="chrome://extensions/" target="_blank">chrome://extensions/</a>.
 
-## Support
+## Support domains
 
 - jp.pornhub.com
 - jp.spankbang.com
