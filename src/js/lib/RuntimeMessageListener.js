@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const isProduction = false;
 const RELAY_SERVER_URL = isProduction
-  ? 'https://kantsu.now.sh'
+  ? 'https://kantsu.onrender.com'
   : 'https://127.0.0.1:5003';
 const API_VERSION = 'v1';
 const END_POINT = `${RELAY_SERVER_URL}/${API_VERSION}`;
@@ -22,7 +22,7 @@ export default class RuntimeMessageListener {
       { url },
       {
         timeout: 60 * 1000,
-      },
+      }
     );
   }
 
