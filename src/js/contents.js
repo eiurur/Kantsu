@@ -4,7 +4,7 @@ import Nanobar from 'nanobar';
 import ProgressBar from './lib/ProgressBar';
 import KantsuButton from './lib/KantsuButton';
 
-const sleep = (ms = 1000) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const fetchMain = () => {
   const eroterestPageUrl = location.href;
@@ -12,20 +12,20 @@ const fetchMain = () => {
 };
 
 const fetchList = () => {
-  return $('.itemWrapper .itemTitle a')
-    .map(function(i, el) {
+  return $('.itemBody .gotoBlog a')
+    .map(function (i, el) {
       return $(this).attr('href');
     })
     .get()
     .map(
-      eroterestPageUrl =>
-        new KantsuButton({ url: eroterestPageUrl, type: 'list' }),
+      (eroterestPageUrl) =>
+        new KantsuButton({ url: eroterestPageUrl, type: 'list' })
     );
 };
 
 const fetchGoButtons = async () => {
   const inMainPage = location.href.includes(
-    'https://movie.eroterest.net/page/',
+    'https://movie.eroterest.net/page/'
   );
 
   if (inMainPage) {
@@ -46,7 +46,7 @@ const fetchGoButtons = async () => {
         await button.show();
         progressBar.inc();
       } catch (err) {}
-    }),
+    })
   );
   progressBar.finish();
 })();
