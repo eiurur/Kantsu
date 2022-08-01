@@ -12,7 +12,7 @@ const fetchMain = () => {
 };
 
 const fetchList = () => {
-  return $('.itemBody .gotoBlog a')
+  return $('.itemWrapper .itemTitle a')
     .map(function (i, el) {
       return $(this).attr('href');
     })
