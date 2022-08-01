@@ -10,7 +10,7 @@ Open directly the movie page from eroterest.net and movie.eroterest.net.
 
 ## Demo
 
-![demo](https://github.com/eiurur/Kantsu/raw/demo/after_demo.gif)
+![demo](https://github.com/eiurur/Kantsu/blob/master/media/demo.gif)
 
 ## Install
 
