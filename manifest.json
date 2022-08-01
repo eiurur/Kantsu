@@ -8,14 +8,12 @@
     "persistent": false,
     "scripts": ["build/js/background.bundle.js"]
   },
-  "content_scripts": [
-    {
-      "matches": ["*://eroterest.net/*", "https://movie.eroterest.net/*"],
-      "css": ["build/css/contents.min.css"],
-      "js": ["build/js/contents.bundle.js"],
-      "run_at": "document_end"
-    }
-  ],
+  "content_scripts": [{
+    "matches": ["*://eroterest.net/*", "https://movie.eroterest.net/*"],
+    "css": ["build/css/contents.min.css"],
+    "js": ["build/js/contents.bundle.js"],
+    "run_at": "document_end"
+  }],
   "icons": {
     "16": "build/images/icon19.png",
     "48": "build/images/icon48.png",
