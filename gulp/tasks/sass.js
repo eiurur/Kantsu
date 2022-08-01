@@ -1,7 +1,7 @@
 const $ = require('gulp-load-plugins')();
 const gulp = require('gulp');
-const sass = require('gulp-sass');
-// const sass = require('gulp-sass')(require('sass'));
+const sass = require('gulp-sass')(require('sass'));
+
 const config = require('../config').sass;
 
 gulp.task('sass', () =>
